@@ -24,7 +24,6 @@ const MainContent = ({formtitle,inputs,formValues, handleChange,handleSubmit}) =
                 <form onSubmit={onFormSubmit}>
                     {inputs.map((e)=>(<><label htmlFor="name">{e.label}</label>
                       <input type={e.type}   name={e.name} value={formValues[e.name]} required={e.required} onChange={handleChange} /></>))}
-                   
                     <button type="submit">Submit</button>
                 </form>
             </div>

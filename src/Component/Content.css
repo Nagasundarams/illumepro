@@ -10,6 +10,7 @@
     padding: 20px;
     box-sizing: border-box;
     padding-top: 60px;
+    overflow-y: scroll;
 }
 
 .dialog.open {
