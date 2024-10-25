@@ -1,0 +1,69 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f4f4f4;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.search-bar {
+  width: 30%; /* Set a width for the search bar */
+  padding: 10px; /* Add padding for better text spacing */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* Darker background */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+  margin-left: 35%;
+}
+
+.search-bar::placeholder {
+  color: #aaa; /* Placeholder text color */
+}
+
+.search-bar:focus {
+  background-color: #555; /* Lighter background on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Add shadow effect on focus */
+}
+
+
+.userprofilepic{
+  border-radius: 50%; /* Make the profile picture circular */
+  height: 10%;
+  width: 10%;
+  float: right;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the image */
+  right: 0; /* Align to the right */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 120px; /* Set a width for the dropdown */
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px; /* Add padding to items */
+  cursor: pointer; /* Show pointer cursor */
+  color: #555;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}

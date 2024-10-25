@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
+  margin-left: 200px;
+  padding-top: 60px; /* Height of the header */
+  flex: 1;
+}
+.incontent{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: space-between; /* Space between cards */
+  margin: -8px; /* Remove default margin */
+}
+/* styles.css or your component's CSS file */
+
+.newbutton {
+  background-color: #4CAF50; /* Green background */
+  width: 8%;
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Vertical and horizontal padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-left: 90%;
+  transition: background-color 0.3s, transform 0.2s; /* Transition effects */
 }
 
-.App-link {
-  color: #61dafb;
+.newbutton:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.newbutton:active {
+  background-color: #388e3c; /* Even darker green when clicked */
+  transform: translateY(0); /* Reset lift effect */
+}
+
+@media (max-width: 768px) {
+  .newbutton {
+      width: 80%; /* Responsive width on smaller screens */
+      margin-top: 10px; /* Adjust margin for better spacing */
+      float: none; /* Reset float to center button */
+      display: block; /* Block display for full width */
+      margin-left: auto; /* Center align */
+      margin-right: auto; /* Center align */
   }
 }
+
+

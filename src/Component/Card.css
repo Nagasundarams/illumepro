@@ -1,0 +1,92 @@
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 90%; /* Make it responsive */
+    max-width: 300px; /* Limit max width */
+    margin: 16px auto; /* Center the card */
+    font-family: Arial, sans-serif;
+}
+
+
+.headercard {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #f5f5f5;
+}
+
+.headercard img {
+    width: 50px; /* Adjust image size */
+    height: 50px; /* Adjust image size */
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 16px; /* Space between image and text */
+}
+
+.headercontent h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.headercontent p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.cardbody {
+    padding: 16px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5; /* Improve readability */
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .headercard {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .headercard img {
+        margin-bottom: 8px; /* Add space below the image */
+    }
+
+    .headercontent h4 {
+        font-size: 16px; /* Reduce font size */
+    }
+
+    .headercontent p {
+        font-size: 12px; /* Reduce font size */
+    }
+
+    .cardbody {
+        font-size: 12px; /* Reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 12px; /* Reduce padding on smaller screens */
+    }
+
+    .headercard {
+        padding: 12px; /* Reduce header padding */
+    }
+
+    .headercontent h4 {
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    .headercontent p {
+        font-size: 10px; /* Further reduce font size */
+    }
+
+    .cardbody {
+        font-size: 10px; /* Further reduce font size */
+    }
+}
