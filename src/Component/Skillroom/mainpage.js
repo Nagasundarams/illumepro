@@ -3,7 +3,8 @@ import Sidebar from "../SideBar";
 import '../../App.css';
 import MainContent from "../Content";
 import { useState } from "react";
-import { TableContent } from "./TableContent";
+import EditableForm from "./EditableForm";
+import TableContent from './TableContent';
 
 const Mainpage = () => {
 
@@ -139,7 +140,8 @@ const Mainpage = () => {
         {/* <div className='card-container'>
             <Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo />
         </div> */}
-        {/* <TableContent/> */}
+        <TableContent/>
+        <EditableForm/>
 
 
     </div>);

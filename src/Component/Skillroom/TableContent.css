@@ -1,0 +1,29 @@
+.table-container {
+    overflow-x: auto; /* Allow horizontal scrolling */
+    margin: 20px 0; /* Add margin for spacing */
+  }
+  
+  .table {
+    min-width: 510px;
+    border-collapse: collapse;
+    width: 100%; /* Use full width of the container */
+    table-layout: auto; /* Allow the table to adjust based on content */
+  }
+  
+  .header-cell {
+    background-color: #f3f2f2;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px; /* Padding for header cells */
+  }
+  
+  .row:hover {
+    background-color: #eaeaea; /* Highlight row on hover */
+  }
+  
+  .cell {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: white; /* Background color for cells */
+  }
+  
