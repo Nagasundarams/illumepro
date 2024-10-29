@@ -141,7 +141,7 @@ const Mainpage = () => {
             <Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo />
         </div> */}
         <TableContent/>
-        <EditableForm/>
+        
 
 
     </div>);

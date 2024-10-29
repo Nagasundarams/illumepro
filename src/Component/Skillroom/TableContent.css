@@ -8,6 +8,7 @@
     border-collapse: collapse;
     width: 100%; /* Use full width of the container */
     table-layout: auto; /* Allow the table to adjust based on content */
+    position: relative;
   }
   
   .header-cell {
