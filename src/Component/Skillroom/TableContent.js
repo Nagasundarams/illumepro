@@ -1,7 +1,6 @@
 import React,{useState}from "react";
 import "./TableContent.css";
 import EditableForm from "./EditableForm";
-import { Table, TableHeader, TableHeaderCell, TableRow } from "@fluentui/react-components";
 
 
 const TableContent=()=> {
@@ -150,23 +149,23 @@ const columns = [
   { columnKey: "startDate", label: "Start Date" },
   { columnKey: "programcategory", label: "Category" },
   { columnKey: "totalseats", label: "Total Seats" },
-  { columnKey: "state", label: "State" },
+  { columnKey: "remainingseats", label: "Remaining Seats" },
 ]
 
 
   return (
     <div className="table-container">
       {editingItem ? <EditableForm initialData={editingItem} onSave={handleSave} onCancel={handleCancel}/>:
-      <Table className="table" arial-label="Default table" >
-        <TableHeader>
-          <TableRow>
+      <table className="table" arial-label="Default table" >
+        <thead>
+          <tr>
             {columns.map((column) => (
-              <TableHeaderCell key={column.columnKey} className="header-cell">
+              <th key={column.columnKey} className="header-cell">
                 {column.label}
-              </TableHeaderCell>
+              </th>
             ))}
-          </TableRow>
-        </TableHeader>
+          </tr>
+        </thead>
         <tbody>
           {items.map((item, index) => (
             <tr key={index} className="row">
@@ -179,7 +178,7 @@ const columns = [
             </tr>
           ))}
         </tbody>
-      </Table>}
+      </table>}
     </div>
   );
 }
