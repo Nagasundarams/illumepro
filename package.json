@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fluentui/react": "^8.121.6",
+    "@fluentui/react": "^8.121.7",
     "@fluentui/react-components": "^9.55.1",
     "@fluentui/react-icons": "^2.0.261",
     "@fluentui/react-nav-preview": "^0.9.1",

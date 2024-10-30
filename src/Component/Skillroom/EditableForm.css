@@ -18,21 +18,12 @@
   }
   
   .skillroomcard label {
-    font-weight:300; /* Bold labels */
+    font-weight:bold; /* Bold labels */
     display: block; /* Make labels block elements */
     margin-bottom: 5px; /* Space below labels */
   }
   
-  .skillroomcard input[type="text"],
-  .skillroomcard input[type="number"],
-  .skillroomcard input[type="date"] {
-    width: calc(100% - 20px); /* Full width minus padding */
-    padding: 10px; /* Inner padding */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 4px; /* Rounded corners for inputs */
-    margin-bottom: 15px; /* Space below inputs */
-    font-weight: lighter;
-  }
+  
   
   .skillroomcard button {
     background-color: #0078d4;

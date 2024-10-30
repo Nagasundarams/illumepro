@@ -1,30 +1,54 @@
 .table-container {
-    overflow-x: auto; /* Allow horizontal scrolling */
-    margin: 20px 0; /* Add margin for spacing */
-  }
-  
+  overflow-x: auto; /* Allow horizontal scrolling */
+  margin: 20px 0; /* Add margin for spacing */
+  font-family: Arial, sans-serif; /* Better font for readability */
+  margin-right: 5px;
+}
+
+.table {
+  min-width: 510px;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 8px; /* Rounded corners for the table */
+  overflow: hidden; /* Hide overflow for rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header-cell {
+  background-color: #3d67f1; /* Header background color */
+  color: white; /* Header text color */
+  font-weight: bold;
+  text-align: left;
+  padding: 15px; /* Increased padding for header cells */
+}
+
+.row {
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.row:hover {
+  background-color: #eaeaea; /* Highlight row on hover */
+}
+
+.cell {
+  padding: 15px; /* Increased padding for cells */
+  border: 1px solid #ddd; /* Soft border */
+  background-color: white; /* Cell background color */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.cell:hover {
+  background-color: #f9f9f9; /* Light gray on hover for cells */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
   .table {
-    min-width: 510px;
-    border-collapse: collapse;
-    width: 100%; /* Use full width of the container */
-    table-layout: auto; /* Allow the table to adjust based on content */
-    
+    font-size: 14px; /* Smaller font size for mobile */
   }
-  
-  .header-cell {
-    background-color: #f3f2f2;
-    font-weight: bold;
-    text-align: left;
-    padding: 10px; /* Padding for header cells */
-  }
-  
-  .row:hover {
-    background-color: #eaeaea; /* Highlight row on hover */
-  }
-  
+
+  .header-cell,
   .cell {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: white; /* Background color for cells */
+    padding: 10px; /* Adjust padding for smaller screens */
   }
-  
+}

@@ -5,6 +5,7 @@ import MainContent from "../Content";
 import { useState } from "react";
 import EditableForm from "./EditableForm";
 import TableContent from './TableContent';
+import { Horizontal } from "./HorizontalTabs";
 
 const Mainpage = () => {
 
@@ -164,6 +165,7 @@ const Mainpage = () => {
         {/* <div className='card-container'>
             <Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo />
         </div> */}
+        <Horizontal/>
         <TableContent/>
         
 

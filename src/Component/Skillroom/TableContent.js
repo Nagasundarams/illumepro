@@ -1,11 +1,9 @@
-import React,{useState}from "react";
+import React, { useState } from "react";
 import "./TableContent.css";
 import EditableForm from "./EditableForm";
 
-
-const TableContent=()=> {
-
-  const itemsdata = [
+const TableContent = () => {
+ const itemsdata = [
     {
       classname: "Introduction to React",
       organizationName: "Tech Academy",
@@ -121,65 +119,65 @@ const TableContent=()=> {
       tags: "HTML, CSS, Web Development",
     },
   ]
+
   const [items, setItems] = useState(itemsdata);
-  const [editingItem, setEditingItem] = useState(null); 
+  const [editingItem, setEditingItem] = useState(null);
 
   const handleEditClick = (item) => {
-    setEditingItem(item); // Set the item to be edited
+    setEditingItem(item);
   };
 
   const handleSave = (updatedItem) => {
     setItems((prevItems) =>
       prevItems.map((item) => (item.classname === updatedItem.classname ? updatedItem : item))
     );
-    setEditingItem(null); // Close the edit form after saving
+    setEditingItem(null);
   };
 
   const handleCancel = () => {
-    setEditingItem(null); // Close the edit form without saving
+    setEditingItem(null);
   };
 
-  
-
-
-
-const columns = [
-  { columnKey: "name", label: "Name" },
-  { columnKey: "instructor", label: "Instructor" },
-  { columnKey: "startDate", label: "Start Date" },
-  { columnKey: "programcategory", label: "Category" },
-  { columnKey: "totalseats", label: "Total Seats" },
-  { columnKey: "remainingseats", label: "Remaining Seats" },
-]
-
+  const columns = [
+    { columnKey: "name", label: "Name" },
+    { columnKey: "instructor", label: "Instructor" },
+    { columnKey: "startDate", label: "Start Date" },
+    { columnKey: "programCategory", label: "Category" },
+    { columnKey: "totalSeats", label: "Total Seats" },
+    { columnKey: "remainingSeats", label: "Remaining Seats" },
+  ];
 
   return (
     <div className="table-container">
-      {editingItem ? <EditableForm initialData={editingItem} onSave={handleSave} onCancel={handleCancel}/>:
-      <table className="table" arial-label="Default table" >
-        <thead>
-          <tr>
-            {columns.map((column) => (
-              <th key={column.columnKey} className="header-cell">
-                {column.label}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((item, index) => (
-            <tr key={index} className="row">
-              <td className="cell" onClick={() => handleEditClick(item)}>{item.classname}</td>
-              <td className="cell">{item.organizationName}</td>
-              <td className="cell">{item.startDate}</td>
-              <td className="cell">{item.programCategory}</td>
-              <td className="cell">{item.totalSeats}</td>
-              <td className="cell">{item.remainingSeats}</td>
+      {editingItem ? (
+        <EditableForm initialData={editingItem} onSave={handleSave} onCancel={handleCancel} />
+      ) : (
+        <table className="table">
+          <thead>
+            <tr>
+              {columns.map((column) => (
+                <th key={column.columnKey} className="header-cell">
+                  {column.label}
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>}
+          </thead>
+          <tbody>
+            {items.map((item, index) => (
+              <tr key={index} className="row" onClick={() => handleEditClick(item)}>
+                <td className="cell">{item.classname}</td>
+                <td className="cell">{item.organizationName}</td>
+                <td className="cell">{item.startDate}</td>
+                <td className="cell">{item.programCategory}</td>
+                <td className="cell">{item.totalSeats}</td>
+                <td className="cell">{item.remainingSeats}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
-}
+};
+
 export default TableContent;
