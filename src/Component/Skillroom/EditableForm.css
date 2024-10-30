@@ -5,8 +5,12 @@
     padding: 20px; /* Padding around the content */
     width: 60%;
     margin: 20px auto; /* Center the card horizontally with margin */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; 
   }
+  .skillroomcard:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
   
   .skillroomcard h2 {
     text-align: center; /* Center the heading */
@@ -14,7 +18,7 @@
   }
   
   .skillroomcard label {
-    font-weight:bold; /* Bold labels */
+    font-weight:300; /* Bold labels */
     display: block; /* Make labels block elements */
     margin-bottom: 5px; /* Space below labels */
   }
@@ -31,19 +35,29 @@
   }
   
   .skillroomcard button {
-    background-color: #0078d4; /* Button color */
-    color: white; /* Button text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    padding: 10px 15px; /* Padding inside the button */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition for hover */
-  }
-  
-  .skillroomcard button:hover {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.skillroomcard button:hover {
     background-color: #005a9e; /* Darker blue on hover */
-  }
-  .dualbutton button{
-    margin: 10px;
-  }
-  
+}
+
+.dualbutton button {
+    margin: 5px; /* Space between buttons */
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px; /* Space below error message */
+}
+.view-text {
+  margin-left: 10px;
+  color: #555; /* Gray text for non-editable fields */
+}

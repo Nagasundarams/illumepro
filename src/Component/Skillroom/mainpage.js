@@ -113,6 +113,30 @@ const Mainpage = () => {
         },
     ];    
 
+    const navItems = [
+        {
+          navRoute: '/organization1',
+          navField: 'Organization 1'
+        },
+        {
+          navRoute: '/organization2',
+          navField: 'Organization 2'
+        },
+        {
+          navRoute: '/organization3',
+          navField: 'Organization 3'
+        },
+        {
+          navRoute: '/organization4',
+          navField: 'Organization 4'
+        },
+        {
+          navRoute: '/organization5',
+          navField: 'Organization 5'
+        }
+      ];
+      
+
     const [createskillroom, setcreateskillroom] = useState({
         classname: '',
         Organaizationname: ''
@@ -135,7 +159,7 @@ const Mainpage = () => {
         });
     };
     return (<div className='incontent'>
-        <Sidebar />
+        <Sidebar/>
         <MainContent formtitle='Add Skillroom' inputs={inputs}  formValues={createskillroom}  handleChange={handleChange} handleSubmit={handleSubmit}/>
         {/* <div className='card-container'>
             <Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo />

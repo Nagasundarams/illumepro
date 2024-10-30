@@ -14,7 +14,7 @@
   .header-cell {
     background-color: #f3f2f2;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     padding: 10px; /* Padding for header cells */
   }
   
