@@ -3,8 +3,7 @@
     border: 1px solid #ddd; /* Light gray border */
     border-radius: 8px; /* Rounded corners */
     padding: 20px; /* Padding around the content */
-    max-width: 600px; /* Maximum width */
-    width: 50%;
+    width: 60%;
     margin: 20px auto; /* Center the card horizontally with margin */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
@@ -15,7 +14,7 @@
   }
   
   .skillroomcard label {
-    font-weight: bold; /* Bold labels */
+    font-weight:bold; /* Bold labels */
     display: block; /* Make labels block elements */
     margin-bottom: 5px; /* Space below labels */
   }
@@ -28,6 +27,7 @@
     border: 1px solid #ccc; /* Light border */
     border-radius: 4px; /* Rounded corners for inputs */
     margin-bottom: 15px; /* Space below inputs */
+    font-weight: lighter;
   }
   
   .skillroomcard button {
@@ -42,5 +42,8 @@
   
   .skillroomcard button:hover {
     background-color: #005a9e; /* Darker blue on hover */
+  }
+  .dualbutton button{
+    margin: 10px;
   }
   

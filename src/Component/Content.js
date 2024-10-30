@@ -120,7 +120,7 @@ const MainContent = ({ formtitle, inputs, formValues, handleChange, handleSubmit
   return (
     <div className="main-content">
       <div>
-        <PrimaryButton className='newbutton' onClick={toggleDialog}>+ Add</PrimaryButton>
+        <PrimaryButton className='newbutton' onClick={toggleDialog}>+Add</PrimaryButton>
         <div className={`dialog ${isOpen ? 'open' : ''}`}>
           <Button className="close-btn" onClick={toggleDialog}>&times;</Button>
           <h2>{formtitle}</h2>

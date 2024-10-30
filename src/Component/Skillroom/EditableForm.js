@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './EditableForm.css';
+import { Input, Label } from '@fluentui/react-components';
+import { PrimaryButton,Text} from '@fluentui/react';
 
 // Here we're going to get a data for particular skillroom
 
 
-const EditableForm = ({initialData,onSave,onCancel}) => {
+const EditableForm = ({ initialData, onSave, onCancel }) => {
   const [formData, setFormData] = useState(initialData);
   const [isEditable, setIsEditable] = useState(false);
   const [error, setError] = useState('');
@@ -37,15 +39,15 @@ const EditableForm = ({initialData,onSave,onCancel}) => {
 
   return (
     <div className='skillroomcard'>
-      <h2>Course Details</h2>
+      <h2>Skillroom Details</h2>
       {error && <div style={{ color: 'red' }}>{error}</div>} {/* Display error message */}
       <form>
         {Object.entries(formData).map(([key, value]) => (
           <div key={key} style={{ marginBottom: '10px' }}>
-            <label>
+            <Label>
               {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}:
               {isEditable ? (
-                <input
+                <Input
                   type={key === 'price' ? 'number' : 'text'}
                   name={key}
                   value={value}
@@ -53,18 +55,22 @@ const EditableForm = ({initialData,onSave,onCancel}) => {
                   style={{ marginLeft: '10px' }}
                 />
               ) : (
-                <span style={{ marginLeft: '10px' }}>{value}</span>
+                <Text 
+    styles={{ root: { marginLeft: '10px', color: 'GrayText' } }}
+>
+    {value}
+</Text>
               )}
-            </label>
+            </Label>
           </div>
         ))}
-        <div>
+        <div className='dualbutton'>
           {isEditable ? (
-            <button type="button" onClick={handleSaveClick}>Save</button>
+            <PrimaryButton type="button" onClick={handleSaveClick}>Save</PrimaryButton>
           ) : (
-            <button type="button" onClick={handleEditClick}>Edit</button>
+            <PrimaryButton type="button" onClick={handleEditClick}>Edit</PrimaryButton>
           )}
-          <button type="button" onClick={onCancel}>Cancel</button>
+          <PrimaryButton type="button" onClick={onCancel}>Cancel</PrimaryButton>
         </div>
       </form>
     </div>
