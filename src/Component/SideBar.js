@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SideBar.css';
 
-const Sidebar = ({navItems = [] }) => {
+const Sidebar = ({navItems = [],setOrganization }) => {
   const [isOpen, setIsOpen] = useState(true); // State to manage sidebar visibility
  
 
@@ -17,7 +17,7 @@ const Sidebar = ({navItems = [] }) => {
       </button>
       <nav className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <ul>
-          {navItems.map((item)=>(<><li><a >{item.navField}</a></li><hr/></>))}
+          {navItems.map((item)=>(<><li><a onClick={()=>setOrganization(item.value)} >{item.navField}</a></li><hr/></>))}
   
         </ul>
       </nav>

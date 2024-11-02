@@ -4,7 +4,7 @@ import Sidedialog from "../Sidedialog";
 import React,{ useState } from "react";
 import TableContent from './TableContent';
 
-const MainContent=()=>{
+const MainContent=({organization})=>{
     const inputs = [
         {
             name: 'classname',
@@ -140,7 +140,7 @@ const MainContent=()=>{
   };
     return(<>
     <Sidedialog formtitle='Add Skillroom' inputs={inputs}  formValues={createskillroom}  handleChange={handleChange} handleSubmit={handleSubmit}/>
-        
+    
         <TabList selectedValue={selectedValue} onTabSelect={onTabSelect}>
        <Tab id="skillrooms" value="skillrooms">
        Skillrooms
@@ -151,10 +151,10 @@ const MainContent=()=>{
        <Tab id="tab3" value="tab3">
          Tab3
        </Tab>
-     </TabList>
-
+     </TabList> 
+     { organization === 'organization1' ? 
      <div>
      {selectedValue === "skillrooms" && <TableContent/>}
-     </div></>)
+     </div>: <h1>organaization not exist</h1>}</>)
 }
 export default MainContent;
