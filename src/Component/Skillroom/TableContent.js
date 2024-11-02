@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./TableContent.css";
 import EditableForm from "./EditableForm";
+import { Table,TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from "@fluentui/react-components";
 
 const TableContent = () => {
  const itemsdata = [
@@ -152,29 +153,29 @@ const TableContent = () => {
       {editingItem ? (
         <EditableForm initialData={editingItem} onSave={handleSave} onCancel={handleCancel} />
       ) : (
-        <table className="table">
-          <thead>
-            <tr>
+        <Table className="table">
+          <TableHeader>
+            <TableRow>
               {columns.map((column) => (
-                <th key={column.columnKey} className="header-cell">
+                <TableHeaderCell key={column.columnKey} className="header-cell">
                   {column.label}
-                </th>
+                </TableHeaderCell>
               ))}
-            </tr>
-          </thead>
-          <tbody>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             {items.map((item, index) => (
-              <tr key={index} className="row" onClick={() => handleEditClick(item)}>
-                <td className="cell">{item.classname}</td>
-                <td className="cell">{item.organizationName}</td>
-                <td className="cell">{item.startDate}</td>
-                <td className="cell">{item.programCategory}</td>
-                <td className="cell">{item.totalSeats}</td>
-                <td className="cell">{item.remainingSeats}</td>
-              </tr>
+              <TableRow key={index} className="row" onClick={() => handleEditClick(item)}>
+                <TableCell className="cell">{item.classname}</TableCell>
+                <TableCell className="cell">{item.organizationName}</TableCell>
+                <TableCell className="cell">{item.startDate}</TableCell>
+                <TableCell className="cell">{item.programCategory}</TableCell>
+                <TableCell className="cell">{item.totalSeats}</TableCell>
+                <TableCell className="cell">{item.remainingSeats}</TableCell>
+              </TableRow>
             ))}
-          </tbody>
-        </table>
+          </TableBody>
+        </Table>
       )}
     </div>
   );

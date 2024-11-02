@@ -1,11 +1,17 @@
 import Cardo from "../Card";
 import Sidebar from "../SideBar";
+import * as React from 'react'
 import '../../App.css';
 import MainContent from "../Content";
 import { useState } from "react";
 import EditableForm from "./EditableForm";
 import TableContent from './TableContent';
-import { Horizontal } from "./HorizontalTabs";
+import {
+    TabList,Tab,
+    type SelectTabData,
+    type SelectTabEvent,
+    type TabValue,
+  } from "@fluentui/react-components";
 
 const Mainpage = () => {
 
@@ -136,12 +142,16 @@ const Mainpage = () => {
           navField: 'Organization 5'
         }
       ];
+
+      const [selectedValue, setSelectedValue] =
+      React.useState("conditions");
+  
+    const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
+      setSelectedValue(data.value);
+    };
       
 
-    const [createskillroom, setcreateskillroom] = useState({
-        classname: '',
-        Organaizationname: ''
-    });
+    const [createskillroom, setcreateskillroom] = useState({});
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -150,9 +160,11 @@ const Mainpage = () => {
             [name]: value
         }));
     };
-    const handleSubmit = (data) => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
         // Here you can handle the form data, e.g., send it to an API
-        console.log('Form Submitted:', data);
+        console.log('Form Submitted:', createskillroom);
         // Reset form values if needed
         setcreateskillroom({
             classname: '',
@@ -165,8 +177,22 @@ const Mainpage = () => {
         {/* <div className='card-container'>
             <Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo /><Cardo />
         </div> */}
-        <Horizontal/>
-        <TableContent/>
+         <TabList selectedValue={selectedValue} onTabSelect={onTabSelect}>
+        <Tab id="skillrooms" value="skillrooms">
+        Skillrooms
+        </Tab>
+        <Tab id="tab2"  value="tab2">
+        Tab2
+        </Tab>
+        <Tab id="tab3" value="tab3">
+          Tab3
+        </Tab>
+      </TabList>
+
+      <div>
+      {selectedValue === "skillrooms" && <TableContent/>}
+      </div>
+        
         
 
 

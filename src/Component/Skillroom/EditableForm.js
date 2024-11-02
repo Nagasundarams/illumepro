@@ -53,19 +53,19 @@ const EditableForm = ({ initialData, onSave, onCancel }) => {
           </div>
         ))}
         <div className='dualbutton'>
-          {isEditable ? (
-            <PrimaryButton type="button" onClick={handleSaveClick}>
-              <SaveRegular /> Save
-            </PrimaryButton>
-          ) : (
-            <PrimaryButton type="button" onClick={handleEditClick}>
-              <EditRegular />Edit
-            </PrimaryButton>
-          )}
-          <PrimaryButton type="button" onClick={onCancel}>
-          <CalendarCancelRegular /> Cancel
-          </PrimaryButton>
-        </div>
+  {isEditable ? (
+    <PrimaryButton type="button" onClick={handleSaveClick}>
+      <SaveRegular /> Save
+    </PrimaryButton>
+  ) : (
+    <PrimaryButton type="button" onClick={handleEditClick}>
+      <EditRegular /> Edit
+    </PrimaryButton>
+  )}
+  <PrimaryButton type="button" onClick={onCancel}>
+    <CalendarCancelRegular /> Cancel
+  </PrimaryButton>
+</div>
       </form>
     </div>
   );

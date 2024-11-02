@@ -1,54 +1,72 @@
 .skillroomcard {
-    background-color: #ffffff; /* White background */
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding around the content */
-    width: 60%;
-    margin: 20px auto; /* Center the card horizontally with margin */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s; 
-  }
-  .skillroomcard:hover {
-    transform: scale(1.02); /* Slightly enlarge on hover */
-}
-  
-  .skillroomcard h2 {
-    text-align: center; /* Center the heading */
-    color: #333; /* Darker text color */
-  }
-  
-  .skillroomcard label {
-    font-weight:bold; /* Bold labels */
-    display: block; /* Make labels block elements */
-    margin-bottom: 5px; /* Space below labels */
-  }
-  
-  
-  
-  .skillroomcard button {
-    background-color: #0078d4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding around the content */
+  width: 400px; /* Fixed width for consistency */
+  margin: 20px auto; /* Center the card horizontally with margin */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s; 
 }
 
-.skillroomcard button:hover {
-    background-color: #005a9e; /* Darker blue on hover */
+.skillroomcard:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
 }
 
-.dualbutton button {
-    margin: 5px; /* Space between buttons */
+.skillroomcard h2 {
+  text-align: center; /* Center the heading */
+  color: #333; /* Darker text color */
+  margin-bottom: 20px; /* Space below heading */
 }
 
-.error-message {
-    color: red;
-    text-align: center;
-    margin-bottom: 15px; /* Space below error message */
+.form-field {
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column; /* Stack label and input/text */
+  margin-bottom: 15px; /* Space between fields */
 }
+
+.skillroomcard label {
+  font-weight: bold; /* Bold labels */
+  margin-bottom: 5px; /* Space below labels */
+}
+
+.input-field {
+  padding: 8px; /* Padding inside input fields */
+  border: 1px solid #ddd; /* Border for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
+  font-size: 14px; /* Font size for inputs */
+}
+
 .view-text {
   margin-left: 10px;
   color: #555; /* Gray text for non-editable fields */
+  font-size: 14px; /* Font size for view text */
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px; /* Space below error message */
+}
+
+.dualbutton {
+  display: flex; /* Flexbox for button alignment */
+  justify-content: space-between; /* Space buttons evenly */
+  margin-top: 20px; /* Space above buttons */
+}
+
+.dualbutton button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1; /* Equal width for buttons */
+  margin: 0 5px; /* Space between buttons */
+}
+
+.dualbutton button:hover {
+  background-color: #005a9e; /* Darker blue on hover */
 }
