@@ -44,7 +44,7 @@ const useStyles = makeStyles({
   }
 });
 
-const MainContent = React.memo(({ formTitle, inputs, formValues, handleChange, handleSubmit }) => {
+const Sidedialog = React.memo(({ formTitle, inputs, formValues, handleChange, handleSubmit }) => {
   const styles = useStyles();
 
   return (
@@ -85,4 +85,4 @@ const MainContent = React.memo(({ formTitle, inputs, formValues, handleChange, h
   );
 });
 
-export default MainContent;
+export default Sidedialog;

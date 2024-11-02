@@ -2,30 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SideBar.css';
 
-const Sidebar = () => {
+const Sidebar = ({navItems = [] }) => {
   const [isOpen, setIsOpen] = useState(true); // State to manage sidebar visibility
-  const navItems = [
-    {
-      navRoute: '/organization1',
-      navField: 'Organization 1'
-    },
-    {
-      navRoute: '/organization2',
-      navField: 'Organization 2'
-    },
-    {
-      navRoute: '/organization3',
-      navField: 'Organization 3'
-    },
-    {
-      navRoute: '/organization4',
-      navField: 'Organization 4'
-    },
-    {
-      navRoute: '/organization5',
-      navField: 'Organization 5'
-    }
-  ];
+ 
 
   const toggleSidebar = () => {
     setIsOpen((prev) => !prev);
@@ -38,7 +17,7 @@ const Sidebar = () => {
       </button>
       <nav className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <ul>
-          {navItems.map((item)=>(<><li><Link to={item.navRoute}>{item.navField}</Link></li><hr/></>))}
+          {navItems.map((item)=>(<><li><a >{item.navField}</a></li><hr/></>))}
   
         </ul>
       </nav>
