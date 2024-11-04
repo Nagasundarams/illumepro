@@ -18,30 +18,39 @@ const useStyles = makeStyles({
   content: {
     display: "flex",
     flexDirection: "column",
-    rowGap: "10px",
-    maxHeight: '70vh', // Control height for scrolling
-    overflowY: 'scroll', // Enable vertical scrolling
-    // Applying scrollbar hide styles directly in the class
-    scrollbarWidth: 'none', // Firefox
+    rowGap: "15px", // Increased gap for better spacing
+    maxHeight: '70vh',
+    overflowY: 'scroll',
+    scrollbarWidth: 'none',
     '&::-webkit-scrollbar': {
-      display: 'none', // Safari and Chrome
+      display: 'none',
     },
   },
   dialogSurface: {
     position: 'fixed',
-    top: '7%', // Center vertically
-    left: '55%', // Center horizontally
-    transform: 'translate(-50%, -50%)', // Center in viewport
-    backgroundColor: '#ffd8d8',
-    width: '80%',
-    maxHeight: '90%', // Limit height
-    overflowY: 'auto', // Allow scrolling if content exceeds max height
+    top: '7%',
+    left: '70%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: 'white',
+    width: '30%',
+    maxHeight: '90%',
+    overflowY: 'auto',
     zIndex: 1000,
-    // Hiding the scrollbar for webkit browsers
-    '&::-webkit-scrollbar': {
-      display: 'none', // Hide the scrollbar
-    },
-  }
+  },
+  formGroup: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '5px', // Spacing between label and input
+  },
+  formbutton: {
+    marginTop: '10px',
+  },
+  input: {
+    padding: '10px',
+    border: '1px solid #ccc',
+    borderRadius: '4px',
+    width: '100%', // Full width for inputs
+  },
 });
 
 const Sidedialog = React.memo(({ formTitle, inputs, formValues, handleChange, handleSubmit }) => {
@@ -58,9 +67,10 @@ const Sidedialog = React.memo(({ formTitle, inputs, formValues, handleChange, ha
             <DialogTitle>{formTitle}</DialogTitle>
             <DialogContent className={styles.content}>
               {inputs.map((inp, ind) => (
-                <div key={ind}>
+                <div key={ind} className={styles.formGroup}>
                   <Label required={inp.required}>{inp.label}</Label>
                   <Input 
+                    className={styles.input}
                     required={inp.required} 
                     type={inp.type} 
                     name={inp.name}
@@ -71,7 +81,7 @@ const Sidedialog = React.memo(({ formTitle, inputs, formValues, handleChange, ha
               ))}
             </DialogContent>
           </DialogBody>
-          <DialogActions>
+          <DialogActions className={styles.formbutton}>
             <DialogTrigger disableButtonEnhancement>
               <Button appearance="secondary">Close</Button>
             </DialogTrigger>

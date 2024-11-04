@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './EditableForm.css';
 import { Input, Label } from '@fluentui/react-components';
 import { PrimaryButton, Text } from '@fluentui/react';
-import { SaveRegular,EditRegular,CalendarCancelRegular} from '@fluentui/react-icons'; // Import icons
+import { SaveRegular, EditRegular, CalendarCancelRegular } from '@fluentui/react-icons';
 
 const EditableForm = ({ initialData, onSave, onCancel }) => {
   const [formData, setFormData] = useState(initialData);
@@ -36,36 +36,36 @@ const EditableForm = ({ initialData, onSave, onCancel }) => {
       <form>
         {Object.entries(formData).map(([key, value]) => (
           <div key={key} className='form-field'>
-            <Label>
+            <Label className='form-label'>
               {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}:
-              {isEditable ? (
-                <Input
-                  type={key === 'price' ? 'number' : 'text'}
-                  name={key}
-                  value={value}
-                  onChange={handleChange}
-                  className='input-field'
-                />
-              ) : (
-                <Text className='view-text'>{value}</Text>
-              )}
             </Label>
+            {isEditable ? (
+              <Input
+                type={key === 'price' ? 'number' : 'text'}
+                name={key}
+                value={value}
+                onChange={handleChange}
+                className='input-field'
+              />
+            ) : (
+              <Text className='view-text'>{value}</Text>
+            )}
           </div>
         ))}
         <div className='dualbutton'>
-  {isEditable ? (
-    <PrimaryButton type="button" onClick={handleSaveClick}>
-      <SaveRegular /> Save
-    </PrimaryButton>
-  ) : (
-    <PrimaryButton type="button" onClick={handleEditClick}>
-      <EditRegular /> Edit
-    </PrimaryButton>
-  )}
-  <PrimaryButton type="button" onClick={onCancel}>
-    <CalendarCancelRegular /> Cancel
-  </PrimaryButton>
-</div>
+          {isEditable ? (
+            <PrimaryButton type="button" onClick={handleSaveClick}>
+              <SaveRegular /> Save
+            </PrimaryButton>
+          ) : (
+            <PrimaryButton type="button" onClick={handleEditClick}>
+              <EditRegular /> Edit
+            </PrimaryButton>
+          )}
+          <PrimaryButton type="button" onClick={onCancel}>
+            <CalendarCancelRegular /> Cancel
+          </PrimaryButton>
+        </div>
       </form>
     </div>
   );

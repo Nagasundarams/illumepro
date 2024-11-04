@@ -155,6 +155,6 @@ const MainContent=({organization})=>{
      { organization === 'organization1' ? 
      <div>
      {selectedValue === "skillrooms" && <TableContent/>}
-     </div>: <h1>organaization not exist</h1>}</>)
+     </div>: <h1>Skillroom not exist</h1>}</>)
 }
 export default MainContent;
