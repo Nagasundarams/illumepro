@@ -1,10 +1,69 @@
 import React, { useState } from "react";
-import "./TableContent.css";
+import { makeStyles } from "@fluentui/react-components";
 import EditableForm from "./EditableForm";
-import { Table,TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from "@fluentui/react-components";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableHeaderCell,
+  TableRow,
+} from "@fluentui/react-components";
+
+const useStyles = makeStyles({
+  tableContainer: {
+    overflowX: 'auto',
+    margin: '20px 0',
+    fontFamily: 'Arial, sans-serif',
+  },
+  table: {
+    borderCollapse: 'collapse',
+    width: '90%',
+    marginLeft:'5%',
+    borderRadius: '8px',
+    overflow: 'hidden',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  },
+  headerCell: {
+    backgroundColor: '#3d67f1',
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'left',
+    padding: '15px',
+  },
+  row: {
+    transition: 'background-color 0.3s',
+    '&:hover': {
+      backgroundColor: '#eaeaea',
+    },
+  },
+  cell: {
+    padding: '5px',
+    border: '1px solid #ddd',
+    backgroundColor: 'white',
+    transition: 'background-color 0.3s',
+    '&:hover': {
+      backgroundColor: '#f9f9f9',
+    },
+  },
+  // Responsive styles
+  '@media (max-width: 600px)': {
+    table: {
+      fontSize: '14px',
+    },
+    headerCell: {
+      padding: '10px',
+    },
+    cell: {
+      padding: '10px',
+    },
+  },
+});
 
 const TableContent = () => {
- const itemsdata = [
+  const styles = useStyles();
+  
+  const itemsdata = [
     {
       classname: "Introduction to React",
       organizationName: "Tech Academy",
@@ -140,8 +199,8 @@ const TableContent = () => {
   };
 
   const columns = [
-    { columnKey: "name", label: "Name" },
-    { columnKey: "instructor", label: "Instructor" },
+    { columnKey: "classname", label: "Name" },
+    { columnKey: "organizationName", label: "Organization" },
     { columnKey: "startDate", label: "Start Date" },
     { columnKey: "programCategory", label: "Category" },
     { columnKey: "totalSeats", label: "Total Seats" },
@@ -149,15 +208,15 @@ const TableContent = () => {
   ];
 
   return (
-    <div className="table-container">
+    <div className={styles.tableContainer}>
       {editingItem ? (
         <EditableForm initialData={editingItem} onSave={handleSave} onCancel={handleCancel} />
       ) : (
-        <Table className="table">
+        <Table className={styles.table}>
           <TableHeader>
             <TableRow>
               {columns.map((column) => (
-                <TableHeaderCell key={column.columnKey} className="header-cell">
+                <TableHeaderCell key={column.columnKey} className={styles.headerCell}>
                   {column.label}
                 </TableHeaderCell>
               ))}
@@ -165,13 +224,13 @@ const TableContent = () => {
           </TableHeader>
           <TableBody>
             {items.map((item, index) => (
-              <TableRow key={index} className="row" onClick={() => handleEditClick(item)}>
-                <TableCell className="cell">{item.classname}</TableCell>
-                <TableCell className="cell">{item.organizationName}</TableCell>
-                <TableCell className="cell">{item.startDate}</TableCell>
-                <TableCell className="cell">{item.programCategory}</TableCell>
-                <TableCell className="cell">{item.totalSeats}</TableCell>
-                <TableCell className="cell">{item.remainingSeats}</TableCell>
+              <TableRow key={index} className={styles.row} onClick={() => handleEditClick(item)}>
+                <TableCell className={styles.cell}>{item.classname}</TableCell>
+                <TableCell className={styles.cell}>{item.organizationName}</TableCell>
+                <TableCell className={styles.cell}>{item.startDate}</TableCell>
+                <TableCell className={styles.cell}>{item.programCategory}</TableCell>
+                <TableCell className={styles.cell}>{item.totalSeats}</TableCell>
+                <TableCell className={styles.cell}>{item.remainingSeats}</TableCell>
               </TableRow>
             ))}
           </TableBody>

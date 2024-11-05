@@ -2,13 +2,14 @@
   overflow-x: auto; /* Allow horizontal scrolling */
   margin: 20px 0; /* Add margin for spacing */
   font-family: Arial, sans-serif; /* Better font for readability */
-  margin-right: 5px;
+  margin-right: 50px;
 }
 
 .table {
-  min-width: 510px;
+  /* min-width: 510px; */
   border-collapse: collapse;
-  width: 100%;
+  width: 10%;
+  margin-right: 50px;
   border-radius: 8px; /* Rounded corners for the table */
   overflow: hidden; /* Hide overflow for rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */

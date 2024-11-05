@@ -16,8 +16,10 @@ const Sidebar = ({navItems = [],setOrganization }) => {
         {isOpen ? 'Hide' : 'Show'} Menu
       </button>
       <nav className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+        
         <ul>
-          {navItems.map((item)=>(<><li><a onClick={()=>setOrganization(item.value)} >{item.navField}</a></li><hr/></>))}
+          <li><Link to={'/'} >DashBoard</Link></li><hr/>
+          {navItems.map((item)=>(<><li> {item.value==='organizations' ? <Link to={'skillroom'}>{item.navField}</Link>: <a onClick={()=>setOrganization(item.value)}>{item.navField}</a>} </li><hr/></>))}
   
         </ul>
       </nav>
